@@ -24,7 +24,7 @@ Route::post('action-login', [App\Http\Controllers\LoginController::class, 'actio
 Route::get('registrasi', [App\Http\Controllers\LoginController::class, 'register'])->name('register');
 Route::get('lengkapi-profile', [App\Http\Controllers\LoginController::class, 'lengkapi_profile'])->name('register');
 Route::get('profile', [App\Http\Controllers\LoginController::class, 'profile']);
-
+Route::post('/insert-register', [App\Http\Controllers\LoginController::class, 'insert_register']);
 
 
 
@@ -41,7 +41,7 @@ Route::middleware('auth')->group(function () {
     // Route::get('actionlogout', [App\Http\Controllers\LoginController::class, 'actionlogout']);
 
     Route::post('update-profile-users', [App\Http\Controllers\LoginController::class, 'update_profile']);
-    Route::post('/insert-register', [App\Http\Controllers\LoginController::class, 'insert_register']);
+   
     Route::post('insert-lengkapi-profile', [App\Http\Controllers\LoginController::class, 'insert_lengkapi_profile']);
 
     // pelamar

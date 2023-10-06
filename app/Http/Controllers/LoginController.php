@@ -137,7 +137,6 @@ class LoginController extends Controller
             'created_at' => Carbon::now(),
         ];
 
-
         User::insert($data);
 
         return redirect('login')->with('suc_message', 'Data Berhasil register!');
