@@ -48,7 +48,7 @@
                 <h4>Data Pelamar</h4>
               </div>
               <div class="card-body">
-            
+                {{$data['jumlah_pelamar']}}
               </div>
             </div>
           </div>
@@ -63,7 +63,7 @@
                 <h4>Data Diterima</h4>
               </div>
               <div class="card-body">
-               
+                {{$data['jumlah_diterima']}}
               </div>
             </div>
           </div>
@@ -78,7 +78,7 @@
                 <h4>Data Ditolak</h4>
               </div>
               <div class="card-body">
-                
+                {{$data['jumlah_tidak_diterima']}}
               </div>
             </div>
           </div>

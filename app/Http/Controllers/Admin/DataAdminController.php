@@ -45,7 +45,7 @@ class DataAdminController extends Controller
 
         User::insert($data);
 
-        return redirect()->back()->with('suc_message', 'Data BerHash::makeil disimpan!');
+        return redirect()->back()->with('suc_message', 'Data Berhasil disimpan!');
     }
 
     public function update(Request $request){

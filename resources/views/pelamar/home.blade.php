@@ -106,7 +106,7 @@
             <div class="well-left">
               <div class="single-well">
                 <a href="#">
-                  <img src="{{ asset('assets_admin/img/profile_sekolah/'.$data['profile']->gambar_perusahaan) }}" alt="" style = "width : 500px">
+                  <img src="{{ asset('assets_admin/img/profile_perusahaan/'.$data['profile']->gambar_perusahaan) }}" alt="" style = "width : 500px">
                 </a>
               </div>
             </div>
@@ -256,7 +256,7 @@
                     </p>
                   </div>
                   <span>
-                    <a href="{{ asset('home/detail_informasi/'.$value->id_informasi) }}" class="ready-btn">Read more</a>
+                    <a href="{{ url('detail-informasi/'.$value->id_informasi) }}" class="ready-btn">Read more</a>
                   </span>
                 </div>
               </div>
@@ -317,7 +317,7 @@
               </div>
             </div>
           </div>
-          <div class="row">
+          {{-- <div class="row">
 
             <!-- Start Google Map -->
             <div class="col-md-6 col-sm-6 col-xs-12">
@@ -353,7 +353,7 @@
               </div>
             </div>
             <!-- End Left contact -->
-          </div>
+          </div> --}}
         </div>
       </div>
     </div><!-- End Contact Section -->

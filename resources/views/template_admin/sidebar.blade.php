@@ -42,12 +42,9 @@
             <li class="menu-header">Data Pendaftaran</li>
             <li class = ""><a class="nav-link" href="<?= url('data-pendaftaran')?>"><i class="fas fa-calendar-check"></i> <span>Data Pendaftaran</span></a></li>
             
-            {{-- <li class="menu-header">Data Transaksi</li>
-            <li class = ""><a class="nav-link" href="<?= url('data-test-tulis')?>"><i class="fas fa-calendar-check"></i> <span>Data konsultasi</span></a></li>
-            <li class = ""><a class="nav-link" href="<?= url('data-seleksi-administrasi')?>"><i class="fas fa-calendar-check"></i> <span>Data Monitoring</span></a></li> --}}
             <li class="menu-header">Data Laporan</li>
-            <li class = ""><a class="nav-link" href="<?= url('data-test-tulis')?>"><i class="fas fa-calendar-check"></i> <span>Data Diterima</span></a></li>
-            <li class = ""><a class="nav-link" href="<?= url('data-test-tulis')?>"><i class="fas fa-calendar-check"></i> <span>Data Tidak Diterima</span></a></li>
+            <li class = ""><a class="nav-link" href="<?= url('data-diterima')?>"><i class="fas fa-calendar-check"></i> <span>Data Diterima</span></a></li>
+            <li class = ""><a class="nav-link" href="<?= url('data-tidak-diterima')?>"><i class="fas fa-calendar-check"></i> <span>Data Tidak Diterima</span></a></li>
           </ul>
 
         

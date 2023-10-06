@@ -43,7 +43,7 @@
 
                         <div class="card card-primary">
                             <div class="card-header">
-                                <h4>Login Admin</h4>
+                                <h4>Login</h4>
                             </div>
                             @if (session()->has('err_message'))
                                 <div class="alert alert-danger alert-dismissible" role="alert" auto-close="120">
@@ -66,7 +66,7 @@
                                 <form method="POST" action="{{url('action-login')}}" class="needs-validation" novalidate="">
                                     @csrf
                                     <div class="form-group">
-                                        <label for="username">admin</label>
+                                        <label for="username">Email</label>
                                         <input id="username" type="email" class="form-control" name="email" tabindex="1" required autofocus>
                                         <div class="invalid-feedback">
                                             Please fill in your Username

@@ -6,9 +6,9 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
-use App\Models\VwInstitusi;
-use App\Models\Institusi;
-use App\Models\Webiner;
+
+use App\Models\Pendaftaran;
+
 use App\Http\Controllers\Controller;
 
 class DashboardController extends Controller
@@ -22,18 +22,16 @@ class DashboardController extends Controller
 
     public function index()
     {
-        // if(Auth::user()->role == 'admin'){
-
-            // $id_users = Auth::user()->id;
-
 
             $data = [
                 'title' => "Dashboard",
+                'jumlah_tidak_diterima' => Pendaftaran::join('users', 'pendaftaran.id_users', '=', 'users.id')->leftjoin('detail_users', 'detail_users.id_users', '=', 'users.id')->where('status_pendaftaran', 'tidak diterima')->get()->count(),
+                'jumlah_diterima' => Pendaftaran::join('users', 'pendaftaran.id_users', '=', 'users.id')->leftjoin('detail_users', 'detail_users.id_users', '=', 'users.id')->where('status_pendaftaran', 'diterima')->get()->count(),
+                'jumlah_pelamar' =>  User::leftJoin('detail_users', 'detail_users.id_users', '=', 'users.id')->where('role', 'pelamar')->get()->count(),
             ];
     
             return view('admin/dashboard')->with('data', $data);
         
-        // }
 
     }
 }

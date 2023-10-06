@@ -36,6 +36,11 @@ class PendaftaranController extends Controller
 
     public function insert(Request $request){
 
+        $id_users = Auth::user()->id;
+        $cek_pendaftarn = Pendaftaran::where('status_pendaftaran', 'pengajuan')->where('id_users', $id_users)->get()->count();
+        if( $cek_pendaftarn > 0){
+            return redirect()->back()->with('err_message', 'Hasil Lamaran Masih Dalam Proses!');
+        }
         $cv = $request->file('cv');
         $nama_document_cv = time()."_".$cv->getClientOriginalName();
         $gambar = $request->file('gambar');
@@ -55,7 +60,9 @@ class PendaftaranController extends Controller
 
 
         $data = [
-            'motivasi' => $request->motivasi,
+            'universitas' => $request->universitas,
+            'prodi' => $request->prodi,
+            'jurusan' => $request->jurusan,
             'dari_tanggal' => $request->dari_tanggal,
             'sampai_tanggal' => $request->sampai_tanggal,
             'gambar' => $nama_document_gambar,

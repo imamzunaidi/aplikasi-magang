@@ -120,7 +120,7 @@ class LoginController extends Controller
 
     public function register()
     {
-      
+        
         return view('auth.register');
     }
 
@@ -152,6 +152,16 @@ class LoginController extends Controller
     }
 
 
+    public function profile()
+    {
+        $data = [
+            'profile' => User::join('detail_users', 'detail_users.id_users', '=', 'users.id')->where('id',Auth::user()->id)->first(),
+        ];
+
+        return view('auth.profile')->with('data', $data);
+    }
+
+
     public function insert_lengkapi_profile(Request $request)
     {
      
@@ -178,6 +188,35 @@ class LoginController extends Controller
         return redirect('')->with('suc_message', 'Data Berkas Lengkap!');
 
         // return redirect()->route('login');
+    }
+
+    public function update_profile(Request $request){
+
+        $id_users =  Auth::user()->id;
+
+        $data = [
+            'nim' => $request->nim,
+            'nik' => $request->nik,
+            'jenis_kelamin' => $request->jenis_kelamin,
+            'agama' => $request->agama,
+            'tanggal_lahir' => $request->tanggal_lahir,
+            'tempat_lahir' => $request->tempat_lahir,
+            'alamat_lengkap' => $request->alamat_lengkap,
+            'nama_lengkap' => $request->nama_lengkap,
+        ];
+
+        DetailUsers::where('id_users', $id_users)->update($data);
+
+        $data_users = [
+            'email' => $request->email,
+            'no_telp' => $request->no_telp,
+            'password' => Hash::make($request->password),
+        ];
+
+        User::where('id', $id_users)->update($data_users);
+
+        return redirect()->back()->with('suc_message', 'Data Berhasil diupdate!');
+
     }
 
 }

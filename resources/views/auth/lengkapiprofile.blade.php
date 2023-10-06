@@ -51,7 +51,7 @@
                           <label>NIK</label>
                           <input type="text" name = "nik" class="form-control" required>
                       </div>
-                  </div>
+                    </div>
                     <div class="form-group ">
                         <label for="frist_name">Nama Lengkap</label>
                         <input id="frist_name" type="text" class="form-control" name="nama_lengkap" autofocus required>
