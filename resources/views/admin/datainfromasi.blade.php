@@ -95,7 +95,7 @@
                       </div>
                       <div class="form-group">
                         <label for="">Deskripsi</label>
-                        <textarea name="deskripsi" id="" cols="30" rows="10" class = "form-control" required></textarea>
+                        <textarea name="deskripsi" id="summernote" cols="30" rows="10" class = "form-control" required></textarea>
                       </div>
                       <div class="form-group">
                         <label for="">Gambar</label>

@@ -9,6 +9,8 @@ use App\Models\Pendaftaran;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\SendMail;
 
 class DataPendaftaranController extends Controller
 {
@@ -41,22 +43,48 @@ class DataPendaftaranController extends Controller
 
     public function diterima($id_pendaftaran){
 
-        $data = [
+        $data_update = [
             'status_pendaftaran' => 'diterima',
         ];
 
-        Pendaftaran::where('id_pendaftaran', $id_pendaftaran)->update($data);
+        $pendaftaran = Pendaftaran::where('id_pendaftaran', $id_pendaftaran)->first();
+
+        $id_users = $pendaftaran->id_users;
+        $users = User::where('id', $id_users)->first();
+
+        $email = $users->email;
+        $data = [
+            'title' => 'Selamat Anda diterima Masuk Pada Magang Yang Anda Lamar!',
+            'url' => 'http://localhost/aplikasi-magang/public/',
+        ];
+        Mail::to($email)->send(new SendMail($data));
+        
+
+        Pendaftaran::where('id_pendaftaran', $id_pendaftaran)->update($data_update);
 
         return redirect('data-pendaftaran')->with('suc_message', 'Data Berhasil diupdate!');
     }
 
     public function tidak_diterima($id_pendaftaran){
 
-        $data = [
+        $data_update = [
             'status_pendaftaran' => 'tidak diterima',
         ];
 
-        Pendaftaran::where('id_pendaftaran', $id_pendaftaran)->update($data);
+        $pendaftaran = Pendaftaran::where('id_pendaftaran', $id_pendaftaran)->first();
+
+        $id_users = $pendaftaran->id_users;
+        $users = User::where('id', $id_users)->first();
+
+        $email = $users->email;
+        $data = [
+            'title' => 'Mohon Maaf Anda Tidak Diterima Masuk Pada Magang Yang Anda Lamar!',
+            'url' => 'http://localhost/aplikasi-magang/public/',
+        ];
+
+        Mail::to($email)->send(new SendMail($data));
+
+        Pendaftaran::where('id_pendaftaran', $id_pendaftaran)->update($data_update);
 
         return redirect('data-pendaftaran')->with('suc_message', 'Data Berhasil diupdate!');
     }

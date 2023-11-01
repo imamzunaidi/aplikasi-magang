@@ -126,6 +126,7 @@ class LoginController extends Controller
 
     public function insert_register(Request $request)
     {
+
         $data = [
             'name' => $request->name,
             'email' => $request->email,
@@ -136,6 +137,7 @@ class LoginController extends Controller
             'role' => 'pelamar',
             'created_at' => Carbon::now(),
         ];
+
 
         User::insert($data);
 

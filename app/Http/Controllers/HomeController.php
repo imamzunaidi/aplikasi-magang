@@ -36,6 +36,7 @@ class HomeController extends Controller
             'informasi' => Informasi::get(),
             
         ];
+
         return view('pelamar/home')->with('data', $data);
     }
 }

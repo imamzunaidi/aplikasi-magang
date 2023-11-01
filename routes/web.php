@@ -27,8 +27,6 @@ Route::get('profile', [App\Http\Controllers\LoginController::class, 'profile']);
 Route::post('/insert-register', [App\Http\Controllers\LoginController::class, 'insert_register']);
 
 
-
-
 Route::get('login', [App\Http\Controllers\LoginController::class, 'index']);
 Route::get('logout', [App\Http\Controllers\LoginController::class, 'logout'])->name('logout');
 
@@ -85,7 +83,6 @@ Route::middleware('auth')->group(function () {
     Route::get('delete-alur/{id}', [App\Http\Controllers\Admin\DataAlurController::class, 'delete']);
 
     Route::get('data-pelamar', [App\Http\Controllers\Admin\DataPelamarController::class, 'index']);
-
 
     Route::get('data-pendaftaran', [App\Http\Controllers\Admin\DataPendaftaranController::class, 'index']);
     Route::get('detail-pendaftaran/{id}', [App\Http\Controllers\Admin\DataPendaftaranController::class, 'detail']);
