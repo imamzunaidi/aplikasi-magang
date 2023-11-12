@@ -108,15 +108,79 @@
                           <label>Alamat Lengkap</label>
                             <textarea name="alamat_lengkap" id="" required value = "{{$data['detail_pendaftaran']->alamat_lengkap}}" readonly class="form-control" cols="30" rows="10">{{$data['detail_pendaftaran']->alamat_lengkap}}</textarea>
                         </div>
+                        <div class="form-group">
+                       
                     </div>
                     <div class="col-md-12 text-right">
-                        <a href="{{url('proses-tidak-diterima/'.$data['detail_pendaftaran']->id_pendaftaran)}}" class="btn btn-danger">Tidak Diterima</a>
-                        <a href="{{url('proses-diterima/'.$data['detail_pendaftaran']->id_pendaftaran)}}" class="btn btn-success">Diterima</a>
+                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#TidakDiterima">
+                            <i class="fa fa-edit"></i> Tidak Diterima
+                        </button>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Diterima">
+                            <i class="fa fa-edit"></i> Diterima
+                        </button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
+
+<div class="modal fade" id="TidakDiterima">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h4 class="modal-title">Proses Pendaftaran</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <form action="{{url('update-tidak-diterima')}}" method="post" enctype="multipart/form-data">
+                <div class="modal-body">
+                    @csrf
+                    <input type="hidden" name = "id_pendaftaran" value = "{{$data['detail_pendaftaran']->id_pendaftaran}}">
+                        <div class="form-group">
+                            <label>Alasan</label>
+                            <textarea name="keterangan" id="" class="form-control" cols="30" rows="10"></textarea>
+                        </div>
+             
+                
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-success">Simpan</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="Diterima">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h4 class="modal-title">Proses Pendaftaran</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <form action="{{url('update-diterima')}}" method="post" enctype="multipart/form-data">
+                <div class="modal-body">
+                    @csrf
+                    <input type="hidden" name = "id_pendaftaran" value = "{{$data['detail_pendaftaran']->id_pendaftaran}}">
+                    <div class="form-group">
+                        <label>Keteranga Tambahan</label>
+                        <textarea name="keterangan" id="" class="form-control" cols="30" rows="10"></textarea>
+                    </div>
+         
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-success">Simpan</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
 
 @endsection

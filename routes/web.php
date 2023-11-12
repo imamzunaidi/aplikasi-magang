@@ -86,8 +86,8 @@ Route::middleware('auth')->group(function () {
 
     Route::get('data-pendaftaran', [App\Http\Controllers\Admin\DataPendaftaranController::class, 'index']);
     Route::get('detail-pendaftaran/{id}', [App\Http\Controllers\Admin\DataPendaftaranController::class, 'detail']);
-    Route::get('proses-diterima/{id}', [App\Http\Controllers\Admin\DataPendaftaranController::class, 'diterima']);
-    Route::get('proses-tidak-diterima/{id}', [App\Http\Controllers\Admin\DataPendaftaranController::class, 'tidak_diterima']);
+    Route::post('update-diterima', [App\Http\Controllers\Admin\DataPendaftaranController::class, 'diterima']);
+    Route::post('update-tidak-diterima', [App\Http\Controllers\Admin\DataPendaftaranController::class, 'tidak_diterima']);
 
     Route::get('data-diterima', [App\Http\Controllers\Admin\DataDiterimaController::class, 'index']);
     Route::get('detail-diterima/{id}', [App\Http\Controllers\Admin\DataDiterimaController::class, 'detail']);

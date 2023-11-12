@@ -33,6 +33,7 @@
                                 <th>No Telepon</th>
                                 <th>Dari Tanggal</th>
                                 <th>Sampai Tanggal</th>
+                                <th>Keterangan</th>
                                 <th>Status</th>
                                 <th class="text-center" width = "20%">Action</th>
                             </tr>
@@ -48,6 +49,7 @@
                                     <td>{{$item->no_telp}}</td>
                                     <td>{{$item->dari_tanggal}}</td>
                                     <td>{{$item->sampai_tanggal}}</td>
+                                    <td>{{$item->keterangan}}</td>
                                     <td>{{$item->status_pendaftaran}}</td>
                                     <td width = "10%" class="text-center">
                                         <a href="<?= url('detail-lamaran/' . $item->id_pendaftaran) ?>" class="btn btn-info btn-sm"><i class="fas fa-eye"></i></a>

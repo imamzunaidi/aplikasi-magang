@@ -41,10 +41,13 @@ class DataPendaftaranController extends Controller
     }
 
 
-    public function diterima($id_pendaftaran){
+    public function diterima(Request $request){
+
+        $id_pendaftaran = $request->id_pendaftaran;
 
         $data_update = [
             'status_pendaftaran' => 'diterima',
+            'keterangan' => $request->keterangan,
         ];
 
         $pendaftaran = Pendaftaran::where('id_pendaftaran', $id_pendaftaran)->first();
@@ -65,10 +68,12 @@ class DataPendaftaranController extends Controller
         return redirect('data-pendaftaran')->with('suc_message', 'Data Berhasil diupdate!');
     }
 
-    public function tidak_diterima($id_pendaftaran){
+    public function tidak_diterima(Request $request){
+        $id_pendaftaran = $request->id_pendaftaran;
 
         $data_update = [
             'status_pendaftaran' => 'tidak diterima',
+            'keterangan' => $request->keterangan,
         ];
 
         $pendaftaran = Pendaftaran::where('id_pendaftaran', $id_pendaftaran)->first();
