@@ -38,7 +38,9 @@ class DataProfileController extends Controller
 
         $gambar = $request->file('gambar');
 
-        if($gambar != 'null'){
+
+
+        if($gambar != null){
             $nama_document_gambar = time()."_".$gambar->getClientOriginalName();
     
             $tujuan_upload = 'assets_admin/img/profile_perusahaan';

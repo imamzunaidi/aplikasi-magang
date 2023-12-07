@@ -59,6 +59,14 @@ class PendaftaranController extends Controller
         $surat_rekomendasi->move($tujuan_upload,$nama_document_surat_rekomendasi);
 
 
+        $proposal = $request->file('proposal');
+        if ($proposal != null) {
+            $nama_proposal = time()."_".$proposal->getClientOriginalName();
+            $proposal->move($tujuan_upload,$nama_proposal);
+        }else{
+            $nama_proposal = '';   
+        }
+
         $data = [
             'universitas' => $request->universitas,
             'prodi' => $request->prodi,
@@ -68,6 +76,7 @@ class PendaftaranController extends Controller
             'gambar' => $nama_document_gambar,
             'ktp' => $nama_document_ktp,
             'cv' => $nama_document_cv,
+            'proposal' => $nama_proposal,
             'surat_rekomendasi' => $nama_document_surat_rekomendasi,
             'status_pendaftaran' => 'pengajuan',
             'id_users' => Auth::user()->id,

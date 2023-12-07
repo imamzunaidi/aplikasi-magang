@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 12, 2023 at 02:08 PM
+-- Generation Time: Dec 07, 2023 at 08:34 AM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 7.4.30
 
@@ -188,6 +188,7 @@ CREATE TABLE `pendaftaran` (
   `prodi` varchar(255) DEFAULT NULL,
   `surat_rekomendasi` varchar(255) NOT NULL,
   `cv` varchar(255) NOT NULL,
+  `proposal` varchar(255) DEFAULT NULL,
   `id_users` int(11) NOT NULL,
   `dari_tanggal` varchar(255) NOT NULL,
   `sampai_tanggal` varchar(255) NOT NULL,
@@ -201,8 +202,9 @@ CREATE TABLE `pendaftaran` (
 -- Dumping data for table `pendaftaran`
 --
 
-INSERT INTO `pendaftaran` (`id_pendaftaran`, `gambar`, `ktp`, `universitas`, `jurusan`, `prodi`, `surat_rekomendasi`, `cv`, `id_users`, `dari_tanggal`, `sampai_tanggal`, `status_pendaftaran`, `keterangan`, `created_at`, `updated_at`) VALUES
-(8, '1696599311_back.jpg', '1696599311_caravan travel.png', 'vcdbvdsgdeg', 'gdsghfg', 'werewrewrsdf', '1696599311_background.jpeg', '1696599311_bc.jpg', 5, '2023-10-06', '2023-10-17', 'tidak diterima', 'as dasdasd', '2023-11-12 13:07:36', '2023-11-12 13:06:02');
+INSERT INTO `pendaftaran` (`id_pendaftaran`, `gambar`, `ktp`, `universitas`, `jurusan`, `prodi`, `surat_rekomendasi`, `cv`, `proposal`, `id_users`, `dari_tanggal`, `sampai_tanggal`, `status_pendaftaran`, `keterangan`, `created_at`, `updated_at`) VALUES
+(8, '1696599311_back.jpg', '1696599311_caravan travel.png', 'vcdbvdsgdeg', 'gdsghfg', 'werewrewrsdf', '1696599311_background.jpeg', '1696599311_bc.jpg', NULL, 5, '2023-10-06', '2023-10-17', 'tidak diterima', 'as dasdasd', '2023-11-12 13:07:36', '2023-11-12 13:06:02'),
+(10, '1701934013_back.jpg', '1701934013_download (2).jpg', 'cgdf', 'sdfsdf', 'cvf', '1701934013_bc.jpg', '1701934013_background.jpeg', '', 3, '2023-12-07', '2023-12-20', 'pengajuan', NULL, '2023-12-07 00:26:53', NULL);
 
 -- --------------------------------------------------------
 
@@ -250,7 +252,7 @@ CREATE TABLE `profile` (
 --
 
 INSERT INTO `profile` (`id_perusahaan`, `nama_perusahaan`, `deskripsi`, `visi`, `misi`, `no_hp`, `facebook`, `email`, `instagram`, `id_users`, `gambar_perusahaan`, `alamat`, `created_at`, `updated_at`) VALUES
-(1, 'PT. Biro Klasifikasi Indonesia', 'Biro Klasifikasi Indonesia (BKI) menjadi badan klasifikasi ke-4 di Asia setelah Jepang, China dan Korea, dan menjadi satu-satunya badan klasifikasi nasional yang bertugas untuk mengklaskan kapal-kapal niaga berbendera Indonesia dan kapa lberbendera asing yang secara reguler beroperasi di perairan Indonesia.', 'Menjadi independent assurance dan badan klasifikasi berkelas dunia', 'Memberikan nilai tambah terbaik bagi pelanggan Jasa Klasifikasi dan Statutori melalui layanan, operasi dan riset rules yang berstandar internasional serta berbasis pada kualitas, keselamatan dan tanggung jawab sosial - lingkungan kelautan.', '0852131231232', 'hihi', 'admin@gmail.com', 'hihi', 1, '1696263384_bkilogonew-whitebg.png', 'Jl. Sultan Syarif Qasim No.159, Rintis, Kec. Lima Puluh, Kota Pekanbaru, Riau 28156', '2023-10-02 16:16:24', '2023-10-02 16:16:24');
+(1, 'PT. Biro Klasifikasi Indonesia', 'Biro Klasifikasi Indonesia (BKI) menjadi badan klasifikasi ke-4 di Asia setelah Jepang, China dan Korea, dan menjadi satu-satunya badan klasifikasi nasional yang bertugas untuk mengklaskan kapal-kapal niaga berbendera Indonesia dan kapa lberbendera asing yang secara reguler beroperasi di perairan Indonesia.', 'Menjadi independent assurance dan badan klasifikasi berkelas dunia', 'Memberikan nilai tambah terbaik bagi pelanggan Jasa Klasifikasi dan Statutori melalui layanan, operasi dan riset rules yang berstandar internasional serta berbasis pada kualitas, keselamatan dan tanggung jawab sosial - lingkungan kelautan.', '0852131231232', 'hihicc sdfdf', 'admin@gmail.com', 'hihi', 1, '1696263384_bkilogonew-whitebg.png', 'Jl. Sultan Syarif Qasim No.159, Rintis, Kec. Lima Puluh, Kota Pekanbaru, Riau 28156', '2023-12-07 07:14:19', '2023-12-07 07:14:19');
 
 -- --------------------------------------------------------
 
@@ -403,7 +405,7 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `pendaftaran`
 --
 ALTER TABLE `pendaftaran`
-  MODIFY `id_pendaftaran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_pendaftaran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `personal_access_tokens`

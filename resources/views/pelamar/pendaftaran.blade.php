@@ -75,6 +75,10 @@
                             <label for="frist_name">KTP / KTM</label>
                             <input id="frist_name" type="file" class="form-control" name="ktp" autofocus required>
                         </div>
+                        <div class="form-group ">
+                            <label for="frist_name">Proposal</label>
+                            <input id="frist_name" type="file" class="form-control" name="proposal" autofocus>
+                        </div>
                         <div class="form-group">
                             <button type="submit" class="btn btn-primary btn-lg btn-block">
                             Pendaftaran
