@@ -28,6 +28,7 @@ Route::post('/insert-register', [App\Http\Controllers\LoginController::class, 'i
 
 
 Route::get('login', [App\Http\Controllers\LoginController::class, 'index']);
+Route::get('verifikasi/{id}', [App\Http\Controllers\LoginController::class, 'verifikasi']);
 Route::get('logout', [App\Http\Controllers\LoginController::class, 'logout'])->name('logout');
 
 Auth::routes();

@@ -34,6 +34,8 @@
                         <tr >
                             <th width = "5%">No.</th>
                             <th>Nama</th>
+                            <th>Universitas</th>
+                            <th>Jurusan</th>
                             <th>Gambar</th>
                             <th>Email</th>
                             <th>No Telepon</th>
@@ -49,6 +51,8 @@
                             <tr>
                                 <td>{{$no++}}</td>
                                 <td>{{$item->nama_lengkap}}</td>
+                                <td>{{$item->universitas}}</td>
+                                <td>{{$item->jurusan}}</td>
                                 <td width = "10%" class ="text-center"><img src="<?= asset('')?>gambar/<?= $item->gambar?>" alt="" width ="90%"></td>
                                 <td>{{$item->email}}</td>
                                 <td>{{$item->no_telp}}</td>

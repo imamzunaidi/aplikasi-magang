@@ -42,11 +42,11 @@
               <div class="card-body">
                 <form class="user" method = "POST" enctype='multipart/form-data' action = "{{url('insert-register')}}">
                     @csrf
+          
                     <div class="form-group ">
-                        <label for="frist_name">Nama</label>
-                        <input id="frist_name" type="text" class="form-control" name="name" autofocus required>
-                    </div>
-                   
+                      <label for="frist_name">Nama Lengkap</label>
+                      <input id="frist_name" type="text" class="form-control" name="nama_lengkap" autofocus required>
+                  </div>
                  
                     <div class="form-group">
                         <label>Alamat</label>
@@ -72,6 +72,52 @@
                             <div class="bar"></div>
                             <div class="label"></div>
                         </div>
+                    </div>
+                    <div class="row">
+                      <div class="form-group col-6">
+                          <label>NIM</label>
+                          <input type="text" name = "nim" class="form-control" required>
+                      </div>
+                      <div class="form-group col-6">
+                          <label>NIK</label>
+                          <input type="text" name = "nik" class="form-control" required>
+                      </div>
+                    </div>
+                 
+                    <div class="row">
+                        <div class="form-group col-6">
+                            <label>Tempat Lahir</label>
+                            <input type="text" name = "tempat_lahir" class="form-control" required>
+                        </div>
+                        <div class="form-group col-6">
+                            <label>Tanggal Lahir</label>
+                            <input type="date" name = "tanggal_lahir" class="form-control" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Jenis Kelamin</label>
+                        <select class="form-control selectric" name = "jenis_kelamin" required>
+                            <option>--Pilih Jenis Kelamin--</option>
+                            <option value ="laki-laki">Laki-laki</option>
+                            <option value = "perempuan">Perempuan</option>
+                        </select>
+                    </div>
+
+      
+                    <div class="form-group">
+                        <label>Agama</label>
+                        <select name="agama" class="form-control" required id="">
+                            <option>--Pilih Agama--</option>
+                            <option value="Islam">Islam</option>
+                            <option value="Kristen">Kristen</option>
+                            <option value="Hindu">Hindu</option>
+                            <option value="Khonghucu">Khonghucu</option>
+                        </select>
+                    </div>
+                
+                    <div class="form-group">
+                      <label>Alamat Lengkap</label>
+                        <textarea name="alamat_lengkap" id="" required class="form-control" cols="30" rows="10"></textarea>
                     </div>
 
                     <div class="form-group">

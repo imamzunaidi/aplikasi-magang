@@ -38,6 +38,7 @@
                         <a href="{{ url('berkas/'.$data['detail_pendaftaran']->ktp)}}" download class="btn btn-primary">Download KTP</a>
                         <a href="{{ url('berkas/'.$data['detail_pendaftaran']->cv)}}" download class="btn btn-warning">Download CV</a>
                         <a href="{{ url('berkas/'.$data['detail_pendaftaran']->surat_rekomendasi)}}" download class="btn btn-info">Download Surat Rekomendasi</a>
+                        <a href="{{ url('berkas/'.$data['detail_pendaftaran']->proposal)}}" download class="btn btn-info mt-1">Download Proposal</a>
                         <div class="form-group">
                             <label>Universitas</label>
                             <input type="text" name = "agama" class="form-control" required value = "{{$data['detail_pendaftaran']->universitas}}" readonly>

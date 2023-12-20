@@ -1,10 +1,12 @@
 @component('mail::message')
 # Introduction
 
-Selamat Anda Diterima Pada Seleksi Magang Yang Telah Di Ajukan
+@php
+ echo $data['title'];   
+@endphp
 
-@component('mail::button', ['url' => 'http://localhost/aplikasi-magang/public/'])
-Aplikasi Magang
+@component('mail::button', ['url' => $data['url']])
+    Aplikasi Magang
 @endcomponent
 
 Thanks,<br>
