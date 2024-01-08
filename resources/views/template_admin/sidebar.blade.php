@@ -51,6 +51,7 @@
             </li> --}}
             <li class="menu-header">Data Pendaftaran</li>
             <li class = ""><a class="nav-link" href="<?= url('data-pendaftaran')?>"><i class="fas fa-calendar-check"></i> <span>Data Pendaftaran  <sup><span class="subatas">{{$data['pengajuan']}}</span></sup> </a></li>
+            <li class = ""><a class="nav-link" href="<?= url('data-sertifikat')?>"><i class="fas fa-calendar-check"></i> <span>Data Sertifikat </a></li>
             
             <li class="menu-header">Data Laporan</li>
             <li class = ""><a class="nav-link" href="<?= url('data-diterima')?>"><i class="fas fa-calendar-check"></i> <span>Data Diterima  <sup><span class="subatas">{{$data['diterima']}}</span></sup></span></a></li>

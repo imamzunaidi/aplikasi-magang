@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use App\Models\User;
 use App\Models\Pendaftaran;
 use App\Models\Informasi;
+use App\Models\Sertifikat;
 use App\Models\DetailUsers;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Hash;
@@ -28,6 +29,7 @@ class DataLamaranController extends Controller
         $data = [
             'title' => "Data Lamaran",
             'data_lamaran' => Pendaftaran::join('users', 'pendaftaran.id_users', '=', 'users.id')->leftjoin('detail_users', 'detail_users.id_users', '=', 'users.id')->where('pendaftaran.id_users', $id_users)->get(),
+            'data_sertifikat' => Sertifikat::join('users', 'sertifikat.created_by', '=', 'users.id')->where('sertifikat.created_by', $id_users)->get(),
         ];
 
         return view('pelamar/datalamaran')->with('data', $data);
@@ -64,6 +66,5 @@ class DataLamaranController extends Controller
         //mendownload laporan.pdf
     	return $pdf->stream('laporan.pdf');
     }
-
 
 }

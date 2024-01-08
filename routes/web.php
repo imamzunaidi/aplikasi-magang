@@ -77,6 +77,14 @@ Route::middleware('auth')->group(function () {
     Route::post('update-informasi', [App\Http\Controllers\Admin\DataInformasiController::class, 'update']);
     Route::get('delete-informasi/{id}', [App\Http\Controllers\Admin\DataInformasiController::class, 'delete']);
 
+    Route::get('data-sertifikat', [App\Http\Controllers\Admin\DataSertifikatController::class, 'index']);
+    Route::post('approve-sertifikat', [App\Http\Controllers\Admin\DataSertifikatController::class, 'approve']);
+
+
+    Route::post('insert-sertifikat', [App\Http\Controllers\Pelamar\SertifikatController::class, 'insert']);
+    Route::post('update-sertifikat', [App\Http\Controllers\Pelamar\SertifikatController::class, 'update']);
+    Route::get('delete-sertifikat/{id}', [App\Http\Controllers\Pelamar\SertifikatController::class, 'delete']);
+    Route::get('cetak-sertifikat/{id}', [App\Http\Controllers\Pelamar\SertifikatController::class, 'cetak']);
 
     Route::get('data-alur', [App\Http\Controllers\Admin\DataAlurController::class, 'index']);
     Route::post('insert-alur', [App\Http\Controllers\Admin\DataAlurController::class, 'insert']);
