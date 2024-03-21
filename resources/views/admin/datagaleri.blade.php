@@ -31,12 +31,12 @@
             <div class="card-body">
                 <button class="btn btn-primary mb-3" data-toggle="modal" data-target="#exampleModal">Tambah Data</button>
                 <div class="row">
-                
+
                     <?php foreach ($data['galeri'] as $value) {?>
-                            
+
                     <div class="col-md-4">
                         <div class="card img-fluid" style="width:500px">
-                        <img class="card-img-top" src="<?= asset('assets_admin/img/galeri/'.$value->galeri_gambar)?>" alt="Card image" style="width:100%" height ="280px">
+                        <img class="card-img-top" src="<?= asset('assets_admin/img/galeri/'.$value->galeri_gambar)?>" alt="Card image" style="width:100%" height ="200px">
                         <div class="card-img-overlay">
                             <!-- <h4 class="card-title">John Doe</h4>
                             <p class="card-text">Some example text some example text. Some example text some example text. Some example text some example text. Some example text some example text.</p> -->

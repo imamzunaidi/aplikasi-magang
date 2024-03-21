@@ -8,7 +8,7 @@
     <title>Aplikasi Pendaftaran Magang</title>
 
     <!-- General CSS Files -->
-   
+
     <!-- General CSS Files -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
@@ -18,15 +18,15 @@
     <!-- Template CSS -->
     <link rel="stylesheet" href="{{ asset('')}}/assets_admin/css/style.css">
     <link rel="stylesheet" href="{{ asset('')}}/assets_admin/css/components.css">
-    
+
   <!-- General CSS Files -->
-    <link rel="stylesheet" href="{{ asset('assets_admin/datatables/datatables.min.css'); }}">
-    <link rel="stylesheet" href="{{ asset('assets_admin/datatables/dataTables.bootstrap4.min.css'); }}">
-    <link rel="stylesheet" href="{{ asset('assets_admin/datatables/buttons.dataTables.min.css'); }}">
+    <link rel="stylesheet" href="{{ asset('assets_admin/datatables/datatables.min.css')}}">
+    <link rel="stylesheet" href="{{ asset('assets_admin/datatables/dataTables.bootstrap4.min.css')}}">
+    <link rel="stylesheet" href="{{ asset('assets_admin/datatables/buttons.dataTables.min.css')}}">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/css/select2.min.css" rel="stylesheet" />
     <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/js/select2.min.js"></script>
-    <link rel="stylesheet" href="{{ asset('assets_admin/summernote/summernote-bs4.css'); }}">
+    <link rel="stylesheet" href="{{ asset('assets_admin/summernote/summernote-bs4.css')}}">;
     <!-- Start GA -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-94034622-3"></script>
     <script>
@@ -55,11 +55,11 @@
                 <ul class="navbar-nav navbar-right">
                     <!-- menu drop down sebelah kanan untuk lougout -->
                     <li class="dropdown"><a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
-            
+
                     <div class="d-sm-none d-lg-inline-block">Hi, {{ Auth::user()->name }}</div></a>
                     <div class="dropdown-menu dropdown-menu-right">
                         <div class="dropdown-title"></div>
-                    
+
                         <div class="dropdown-divider"></div>
                         <a href="{{ url('logout')}}" class="dropdown-item has-icon text-danger">
                             <i class="fas fa-sign-out-alt"></i> Logout
@@ -115,9 +115,9 @@
                         })
                     });
                 });
-            
+
             </script>
-            
+
             <!-- Page Script -->
             <script>
             $(document).ready(function() {
@@ -147,10 +147,10 @@
                         ['fontsize', ['fontsize']],
                         ['height', ['height', 'codeview', 'fullscreen', 'undo', 'redo']],
                     ],
-                }); 
+                });
                 $('#summernote1').summernote({
                     height: "150px",
-                }); 
+                });
             });
             </script>
         </div>

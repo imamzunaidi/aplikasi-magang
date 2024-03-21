@@ -17,7 +17,7 @@
                     </li>
                     <br>
                     <a href="{{ url('login')}}"></a>Login Admin
-                 
+
                   </ul>
                 </div>
               </div>
@@ -32,17 +32,17 @@
                   Biro Klasifikasi Indonesia (BKI) menjadi badan klasifikasi ke-4 di Asia setelah Jepang, China dan Korea, dan menjadi satu-satunya badan klasifikasi nasional yang bertugas untuk mengklaskan kapal-kapal niaga berbendera Indonesia dan kapa lberbendera asing yang secara reguler beroperasi di perairan Indonesia.
                 </p>
                 <div class="footer-contacts">
-                  <p><span>Alamat</span> Jl. KH. </p>
-                  <p><span>Jam Kerja:</span> 07.00 - 15.00</p>
+                  <p><span>Alamat :</span> JL. MT Haryono No.199 Air Putih, Samarinda, Provinsi Kalimantan Timur.</p>
+                  <p><span>Jam Kerja:</span> 08.00 - 17.00</p>
                 </div>
               </div>
             </div>
           </div>
           <!-- end single footer -->
-      
+
         </div>
       </div>
-    </div>    
+    </div>
     <div class="footer-area-bottom">
       <div class="container">
         <div class="row">

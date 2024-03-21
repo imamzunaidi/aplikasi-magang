@@ -42,7 +42,8 @@ Route::middleware('auth')->group(function () {
     Route::post('update-profile-users', [App\Http\Controllers\LoginController::class, 'update_profile']);
    
     Route::post('insert-lengkapi-profile', [App\Http\Controllers\LoginController::class, 'insert_lengkapi_profile']);
-
+    Route::post('update-verifikasi', [App\Http\Controllers\LoginController::class, 'update_verifikasi']);
+    
     // pelamar
     Route::get('pendaftaran', [App\Http\Controllers\Pelamar\PendaftaranController::class, 'index']);
     Route::post('insert-pendaftaran', [App\Http\Controllers\Pelamar\PendaftaranController::class, 'insert']);
@@ -51,8 +52,8 @@ Route::middleware('auth')->group(function () {
     Route::get('cetak-lamaran/{id}', [App\Http\Controllers\Pelamar\DataLamaranController::class, 'cetak']);
     
     Route::get('detail-informasi/{id}', [App\Http\Controllers\Pelamar\DataLamaranController::class, 'detail_informasi']);
-
-
+    Route::get('setuju-lamaran/{id}', [App\Http\Controllers\Pelamar\DataLamaranController::class, 'setuju']);
+    Route::get('tidak-setuju-lamaran/{id}', [App\Http\Controllers\Pelamar\DataLamaranController::class, 'tidak_setuju']);
     
     
     Route::get('dashboard', [App\Http\Controllers\Admin\DashboardController::class, 'index']);
@@ -77,14 +78,6 @@ Route::middleware('auth')->group(function () {
     Route::post('update-informasi', [App\Http\Controllers\Admin\DataInformasiController::class, 'update']);
     Route::get('delete-informasi/{id}', [App\Http\Controllers\Admin\DataInformasiController::class, 'delete']);
 
-    Route::get('data-sertifikat', [App\Http\Controllers\Admin\DataSertifikatController::class, 'index']);
-    Route::post('approve-sertifikat', [App\Http\Controllers\Admin\DataSertifikatController::class, 'approve']);
-
-
-    Route::post('insert-sertifikat', [App\Http\Controllers\Pelamar\SertifikatController::class, 'insert']);
-    Route::post('update-sertifikat', [App\Http\Controllers\Pelamar\SertifikatController::class, 'update']);
-    Route::get('delete-sertifikat/{id}', [App\Http\Controllers\Pelamar\SertifikatController::class, 'delete']);
-    Route::get('cetak-sertifikat/{id}', [App\Http\Controllers\Pelamar\SertifikatController::class, 'cetak']);
 
     Route::get('data-alur', [App\Http\Controllers\Admin\DataAlurController::class, 'index']);
     Route::post('insert-alur', [App\Http\Controllers\Admin\DataAlurController::class, 'insert']);
@@ -97,10 +90,16 @@ Route::middleware('auth')->group(function () {
     Route::get('detail-pendaftaran/{id}', [App\Http\Controllers\Admin\DataPendaftaranController::class, 'detail']);
     Route::post('update-diterima', [App\Http\Controllers\Admin\DataPendaftaranController::class, 'diterima']);
     Route::post('update-tidak-diterima', [App\Http\Controllers\Admin\DataPendaftaranController::class, 'tidak_diterima']);
+    Route::post('update-diterima-bersyarat', [App\Http\Controllers\Admin\DataPendaftaranController::class, 'diterima_bersyarat']);
+    
 
     Route::get('data-diterima', [App\Http\Controllers\Admin\DataDiterimaController::class, 'index']);
     Route::get('detail-diterima/{id}', [App\Http\Controllers\Admin\DataDiterimaController::class, 'detail']);
 
     Route::get('data-tidak-diterima', [App\Http\Controllers\Admin\DataTidakDiterimaController::class, 'index']);
+    Route::get('data-diterima-bersyarat', [App\Http\Controllers\Admin\DiterimaBersyaratController::class, 'index']);
+    Route::get('detail-bersyarat/{id}', [App\Http\Controllers\Admin\DiterimaBersyaratController::class, 'detail']);
+    
+    
 });
 

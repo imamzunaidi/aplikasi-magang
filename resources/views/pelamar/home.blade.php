@@ -1,12 +1,12 @@
- 
+
 @extends('template.master')
 @section('contents')
  <!-- ======= Slider Section ======= -->
- 
+
  <div id="home" class="slider-area">
     <div class="bend niceties preview-2">
       <div id="ensign-nivoslider" class="slides">
-        <img src="{{ asset('assets') }}/img/slider/banner1.jpg" alt="" title="#slider-direction-1" />
+        <img src="{{ asset('assets') }}/img/slider/banner1.jpeg" alt="" title="#slider-direction-1" />
         <img src="{{ asset('assets') }}/img/slider/banner2.jpg" alt="" title="#slider-direction-2" />
         <img src="{{ asset('assets') }}/img/slider/banner3.jpg" alt="" title="#slider-direction-3" />
       </div>
@@ -144,8 +144,8 @@
         </div>
         <div class="row text-center">
           <!-- Start Left services -->
-          
-          @foreach ($data['alur'] as $value) 
+
+          @foreach ($data['alur'] as $value)
             <div class="col-md-4 col-sm-4 col-xs-12 ">
               <center>
               <div class="about-move">
@@ -181,7 +181,7 @@
         </div>
         <div class="row">
           <div class="col-md-12">
-            
+
           </div>
         </div>
       </div>
@@ -197,7 +197,7 @@
             </div>
           </div>
         </div>
-  
+
         <div class="row awesome-project-content">
           <!-- single-awesome-project start -->
           @foreach ($data['galeri'] as $value)
@@ -260,7 +260,7 @@
                   </span>
                 </div>
               </div>
-    
+
             @endforeach
           </div>
         </div>
@@ -321,7 +321,7 @@
 
             <!-- Start Google Map -->
             <div class="col-md-6 col-sm-6 col-xs-12">
-      
+
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d58749.50151125328!2d106.98344347521022!3d-6.288597057174951!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6993b44246b5b5%3A0x14230a9f8fa3c313!2sSchool%20SMK%20Al%20-%20Muhtadin!5e0!3m2!1sen!2sid!4v1693322121171!5m2!1sen!2sid" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
               <!-- End Map -->
             </div>
@@ -329,7 +329,7 @@
 
             <!-- Start  contact -->
             <div class="col-md-6 col-sm-6 col-xs-12">
-           
+
               <div class="form contact-form">
                 <form action="{{ url('home/insert_pesan')  }}" method="POST">
                   <div class="form-group">

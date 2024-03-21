@@ -48,22 +48,27 @@
                                 <td>{{$item->name}}</td>
                                 <td>{{$item->email}}</td>
                                 <td>{{$item->no_telp}}</td>
-                                <td>{{$item->alamat}}</td>
+                                <td>{{$item->alamat_lengkap}}</td>
                                 <th>
                                     @if ($item->status == 1)
-                                        <div class="badge badge-primary">Lengkap</div>
+                                        <div class="badge badge-primary">Terverifikasi</div>
                                     @else
-                                        <div class="badge badge-warning">Tidak Lengkap</div>
+                                        <div class="badge badge-warning">Need Verifikasi</div>
                                     @endif
                                 </th>
                                 <td width = "10%" class="text-center">
+                                    @if ($item->status == 0)
+                                        <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#Verifikasi{{$item->id}}">
+                                            <i class="fa fa-edit"></i>
+                                        </button>
+                                    @endif
                                     <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#Update{{$item->id}}">
-                                        <i class="fa fa-eye"></i> 
+                                        <i class="fa fa-eye"></i>
                                     </button>
                                 </td>
                             </tr>
                         @endforeach
-                        
+
                     </tbody>
                 </table>
 
@@ -83,7 +88,7 @@
                 <h4 class="modal-title">Detail Data</h4>
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
-       
+
                 <div class="modal-body">
                     @csrf
                     <div class="form-group">
@@ -96,16 +101,16 @@
                             <div class="form-group">
                                 <label for="">Email</label>
                                 <input type="email" name = "email" class="form-control" value = "{{$item->email}}" required readonly>
-                            </div>   
+                            </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="">No Telepon</label>
                                 <input type="number" name = "no_telp" value = "{{$item->no_telp}}" class="form-control" required readonly>
-                            </div> 
+                            </div>
                         </div>
                     </div>
-                  
+
                     <div class="row">
                         <div class="form-group col-6">
                             <label>NIM</label>
@@ -134,13 +139,13 @@
                           <label>Jenis Kelamin</label>
                           <input type="text" name = "jenis_kelamin" class="form-control" required value = "{{$item->jenis_kelamin}}" readonly>
                       </div>
-  
-        
+
+
                       <div class="form-group">
                           <label>Agama</label>
                           <input type="text" name = "agama" class="form-control" required value = "{{$item->agama}}" readonly>
                       </div>
-                  
+
                       <div class="form-group">
                         <label>Alamat Lengkap</label>
                           <textarea name="alamat_lengkap" id="" required value = "{{$item->alamat_lengkap}}" readonly class="form-control" cols="30" rows="10">{{$item->alamat_lengkap}}</textarea>
@@ -149,13 +154,41 @@
 
                 <div class="modal-footer">
                     <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                 
+
                 </div>
-         
+
         </div>
     </div>
 </div>
 
+
+<div class="modal fade" id="Verifikasi{{$item->id}}">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h4 class="modal-title">Verifikasi Data</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <form action="{{url('update-verifikasi')}}" method="post">
+                <div class="modal-body">
+                    @csrf
+                    <div class="form-group">
+                        {{-- <label for="">Nama</label> --}}
+                        <input type="hidden" name = "id" value = "{{$item->id}}">
+                        {{-- <input type="text" name = "name" class="form-control" value = "{{$item->name}}" required readonly> --}}
+                    </div>
+                    <h6>Apakah Yakin Melakukan Verifikasi Data ?</h6>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Verifikasi</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
 @endforeach
 
 

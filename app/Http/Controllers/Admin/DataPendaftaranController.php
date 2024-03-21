@@ -94,4 +94,31 @@ class DataPendaftaranController extends Controller
         return redirect('data-pendaftaran')->with('suc_message', 'Data Berhasil diupdate!');
     }
 
+    public function diterima_bersyarat(Request $request){
+        $id_pendaftaran = $request->id_pendaftaran;
+
+        $data_update = [
+            'status_pendaftaran' => 'diterima bersyarat',
+            'syarat' => $request->syarat,
+        ];
+
+        $pendaftaran = Pendaftaran::where('id_pendaftaran', $id_pendaftaran)->first();
+
+        $id_users = $pendaftaran->id_users;
+        $users = User::where('id', $id_users)->first();
+
+        $email = $users->email;
+        $data = [
+            'title' => 'Selamat Anda diterima bersyarat pada lamaran magang yang telah dilakukan',
+            'url' => 'http://localhost/aplikasi-magang/public/',
+        ];
+
+        Mail::to($email)->send(new SendMail($data));
+
+        Pendaftaran::where('id_pendaftaran', $id_pendaftaran)->update($data_update);
+
+        return redirect('data-pendaftaran')->with('suc_message', 'Data Berhasil diupdate!');
+    }
+
+
 }

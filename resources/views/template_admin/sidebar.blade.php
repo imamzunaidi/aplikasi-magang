@@ -38,7 +38,7 @@
               <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-users"></i> <span>Data Users</span></a>
               <ul class="dropdown-menu">
                 <li class=""><a class="nav-link" href="<?= url('data-admin')?>">Data Admin</a></li>
-                <li class=""><a class="nav-link" href="<?= url('data-pelamar')?>">Data Pelamar</a></li>
+                <li class=""><a class="nav-link" href="<?= url('data-pelamar')?>">Data Pelamar <sup> <span class="subatas ml-1">{{$data['verifikasi']}}</span></sup></a></li>
               </ul>
             </li>
             {{-- <li class="nav-item dropdown">
@@ -51,11 +51,12 @@
             </li> --}}
             <li class="menu-header">Data Pendaftaran</li>
             <li class = ""><a class="nav-link" href="<?= url('data-pendaftaran')?>"><i class="fas fa-calendar-check"></i> <span>Data Pendaftaran  <sup><span class="subatas">{{$data['pengajuan']}}</span></sup> </a></li>
-            <li class = ""><a class="nav-link" href="<?= url('data-sertifikat')?>"><i class="fas fa-calendar-check"></i> <span>Data Sertifikat </a></li>
+            <li class = ""><a class="nav-link" href="<?= url('data-sertifikat')?>"><i class="fas fa-book"></i> <span>Data Sertifikat </a></li>
             
             <li class="menu-header">Data Laporan</li>
             <li class = ""><a class="nav-link" href="<?= url('data-diterima')?>"><i class="fas fa-calendar-check"></i> <span>Data Diterima  <sup><span class="subatas">{{$data['diterima']}}</span></sup></span></a></li>
             <li class = ""><a class="nav-link" href="<?= url('data-tidak-diterima')?>"><i class="fas fa-calendar-check"></i> <span>Data Tidak Diterima  <sup><span class="subatas">{{$data['tidak_diterima']}}</span></sup></span></a></li>
+            <li class = ""><a class="nav-link" href="<?= url('data-diterima-bersyarat')?>"><i class="fas fa-calendar-check"></i> <span>Diterima Bersyarat  <sup><span class="subatas">{{$data['diterima_bersyarat']}}</span></sup></span></a></li>
           </ul>
 
         

@@ -32,12 +32,12 @@
         <div class="col-12 mb-4">
             <div class="hero bg-primary text-white">
                 <div class="hero-inner">
-                <h2>Welcome Back, {{Auth::user()->name}}!</h2>
-                <p class="lead">Kelola data webinar ini dengan baik dan benar!</p>
+                <h2>Selamat Datang, {{Auth::user()->name}}!</h2>
+                <p class="lead">Kelola pendaftaran webinar ini dengan baik dan benar!</p>
                 </div>
             </div>
         </div>
-        
+
         <div class="col-lg-4 col-md-6 col-sm-6 col-12">
           <div class="card card-statistic-1">
             <div class="card-icon bg-danger">
@@ -82,11 +82,11 @@
               </div>
             </div>
           </div>
-        </div>                  
+        </div>
       </div>
-    
 
-        
+
+
     </div>
   </section>
 </div>

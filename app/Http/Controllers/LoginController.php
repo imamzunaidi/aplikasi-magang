@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Session;
+use Illuminate\Support\Facades\Session;
 use App\Models\User;
 use App\Models\DetailUsers;
 use Carbon\Carbon;
@@ -19,7 +19,7 @@ class LoginController extends Controller
         dd('test');
         if (Auth::check() AND Auth::user()->status != "0"  ) {
 
-           
+
             return redirect('home');
         }else{
             dd('test');
@@ -57,14 +57,14 @@ class LoginController extends Controller
             if ($data_user->status != '0') {
                 if(Auth::attempt($data)){
                     $request->session()->regenerate();
-        
+
                     if(Auth::user()->role == 'admin'){
                         $id_users =  Auth::user()->id;
                         $cek_data = User::where('id', $id_users)->count();
-        
-                       
+
+
                         if($cek_data > 0){
-        
+
                             if(Auth::user()->role == '0'){
                                 Auth::logout();
                                 $request->session()->invalidate();
@@ -72,38 +72,38 @@ class LoginController extends Controller
                                 return redirect()->back()->with('err_message', 'Akun Dinonaktfikan  !!');
                                 return redirect('login');
                             }else{
-                                
+
                                 return redirect('dashboard');
                             }
                         }else{
                             return redirect('lengkapi-profile');
                         }
                     }else{
-        
-                      
+
+
                         if(Auth::user()->status =="0"){
-                   
+
                             return redirect('login')->with('err_message', 'Akun Belum di Verifikasi  !!');
                         }else{
                             return redirect('');
                         }
                     }
-                  
+
                 }else{
-        
+
                     return redirect()->back()->with('err_message', 'Email dan Password Salah !!');
                 }
             } else {
                 return redirect('login')->with('err_message', 'Akun Belum di Verifikasi  !!');
             }
-            
-            
-    
+
+
+
         } else {
             return redirect()->back()->with('err_message', 'Email dan Password Salah !!');
         }
-        
-       
+
+
     }
 
 
@@ -121,7 +121,7 @@ class LoginController extends Controller
 
     public function register()
     {
-        
+
         return view('auth.register');
     }
 
@@ -141,8 +141,7 @@ class LoginController extends Controller
 
         $user = User::create($data);
         $lastId = $user->id;
-
-
+        
         $data_detail = [
             'nim' => $request->nim,
             'nik' => $request->nik,
@@ -159,13 +158,13 @@ class LoginController extends Controller
         DetailUsers::insert($data_detail);
 
 
-        $email = $request->email;
-        $data_email = [
-            'title' => 'Lakukan Verifikasi Akun Email Dengan Klik Button Dibawah ini',
-            'url' => 'http://localhost/aplikasi-magang/public/verifikasi/'.$lastId,
-        ];
+        // $email = $request->email;
+        // $data_email = [
+        //     'title' => 'Lakukan Verifikasi Akun Email Dengan Klik Button Dibawah ini',
+        //     'url' => 'http://localhost/aplikasi-magang/public/verifikasi/'.$lastId,
+        // ];
 
-        Mail::to($email)->send(new SendMail($data_email));
+        // Mail::to($email)->send(new SendMail($data_email));
 
 
 
@@ -176,7 +175,7 @@ class LoginController extends Controller
 
     public function lengkapi_profile()
     {
-      
+
         return view('auth.lengkapiprofile');
     }
 
@@ -193,7 +192,7 @@ class LoginController extends Controller
 
     public function insert_lengkapi_profile(Request $request)
     {
-     
+
         $data = [
             'nim' => $request->nim,
             'nik' => $request->nik,
@@ -209,10 +208,10 @@ class LoginController extends Controller
 
         DetailUsers::insert($data);
 
-        $update = [
-            'status' => '1'
-        ];
-        User::where('id', Auth::user()->id)->update($update);
+        // $update = [
+        //     'status' => '0'
+        // ];
+        // User::where('id', Auth::user()->id)->update($update);
 
         return redirect('')->with('suc_message', 'Data Berkas Lengkap!');
 
@@ -226,8 +225,21 @@ class LoginController extends Controller
         User::where('id', $id)->update($update);
 
         return redirect('home')->with('suc_message', 'Data Berhasil Diverifikasi!');;
-        
+
     }
+
+    public function update_verifikasi(Request $request){
+        $id = $request->id;
+        $update = [
+            'status' => '1'
+        ];
+        User::where('id', $id)->update($update);
+        return redirect()->back()->with('suc_message', 'Data Berhasil diupdate!');
+
+    }
+
+    
+
 
     public function update_profile(Request $request){
 

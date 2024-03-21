@@ -39,8 +39,8 @@
                             <th>Gambar</th>
                             <th>Email</th>
                             <th>No Telepon</th>
-                            <th>Dari Tanggal</th>
-                            <th>Sampai Tanggal</th>
+                            <th>Mulai</th>
+                            <th>Selesai</th>
                             <th>Status</th>
                             <th class="text-center" width = "20%">Action</th>
                         </tr>
@@ -64,7 +64,7 @@
                                 </td>
                             </tr>
                         @endforeach
-                        
+
                     </tbody>
                 </table>
 

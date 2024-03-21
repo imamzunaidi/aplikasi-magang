@@ -63,16 +63,16 @@
                                 <div class="form-group">
                                     <label for="">Email</label>
                                     <input type="email" name = "email" class="form-control" value = "{{$data['detail_pendaftaran']->email}}" required readonly>
-                                </div>   
+                                </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="">No Telepon</label>
                                     <input type="number" name = "no_telp" value = "{{$data['detail_pendaftaran']->no_telp}}" class="form-control" required readonly>
-                                </div> 
+                                </div>
                             </div>
                         </div>
-                      
+
                         <div class="row">
                             <div class="form-group col-6">
                                 <label>NIM</label>
@@ -83,7 +83,7 @@
                                 <input type="text" name = "nik" class="form-control" required value = "{{$data['detail_pendaftaran']->nik}}" readonly>
                             </div>
                         </div>
-                        
+
                         <div class="row">
                             <div class="form-group col-6">
                                 <label>Tempat Lahir</label>
@@ -94,23 +94,35 @@
                                 <input type="date" name = "tanggal_lahir" class="form-control" required value = "{{$data['detail_pendaftaran']->tanggal_lahir}}" readonly>
                             </div>
                         </div>
+
+                        <div class="row">
+                            <div class="form-group col-6">
+                                <label>Mulai</label>
+                                <input type="date" name = "dari_tanggal" class="form-control" required value = "{{$data['detail_pendaftaran']->dari_tanggal}}" readonly>
+                            </div>
+                            <div class="form-group col-6">
+                                <label>Selesai</label>
+                                <input type="date" name = "sampai_tanggal" class="form-control" required value = "{{$data['detail_pendaftaran']->sampai_tanggal}}" readonly>
+                            </div>
+                        </div>
+
                         <div class="form-group">
                             <label>Jenis Kelamin</label>
                             <input type="text" name = "jenis_kelamin" class="form-control" required value = "{{$data['detail_pendaftaran']->jenis_kelamin}}" readonly>
                         </div>
-    
-          
+
+
                         <div class="form-group">
                             <label>Agama</label>
                             <input type="text" name = "agama" class="form-control" required value = "{{$data['detail_pendaftaran']->agama}}" readonly>
                         </div>
-                    
+
                         <div class="form-group">
                           <label>Alamat Lengkap</label>
                             <textarea name="alamat_lengkap" id="" required value = "{{$data['detail_pendaftaran']->alamat_lengkap}}" readonly class="form-control" cols="30" rows="10">{{$data['detail_pendaftaran']->alamat_lengkap}}</textarea>
                         </div>
                     </div>
-                  
+
                 </div>
             </div>
         </div>

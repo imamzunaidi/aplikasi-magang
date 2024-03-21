@@ -13,9 +13,9 @@
   <!-- Favicons -->
   <link href="{{ asset('') }}assets_admin/img/logonew.png" rel="icon">
   <link href="{{ asset('') }}assets/img/apple-touch-icon.png" rel="apple-touch-icon">
-  <link rel="stylesheet" href="{{ asset('assets_admin/datatables/datatables.min.css');  }}">
-  <link rel="stylesheet" href="{{ asset('assets_admin/datatables/dataTables.bootstrap4.min.css');  }}">
-  <link rel="stylesheet" href="{{ asset('assets_admin/datatables/buttons.dataTables.min.css');  }}">
+  <link rel="stylesheet" href="{{ asset('assets_admin/datatables/datatables.min.css')}}">
+  <link rel="stylesheet" href="{{ asset('assets_admin/datatables/dataTables.bootstrap4.min.css')}}">
+  <link rel="stylesheet" href="{{ asset('assets_admin/datatables/buttons.dataTables.min.css')}}">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700|Raleway:300,400,400i,500,500i,700,800,900" rel="stylesheet">
@@ -29,9 +29,9 @@
   <link href="{{ asset('') }}assets/vendor/owl.carousel/assets_admin/owl.carousel.min.css" rel="stylesheet">
   <link href="{{ asset('') }}assets/vendor/venobox/venobox.css" rel="stylesheet">
 
-  <link rel="stylesheet" href="{{ asset('assets_admin/datatables/datatables.min.css');  }}">
-  <link rel="stylesheet" href="{{ asset('assets_admin/datatables/dataTables.bootstrap4.min.css');  }}">
-  <link rel="stylesheet" href="{{ asset('assets_admin/datatables/buttons.dataTables.min.css');  }}">
+  <link rel="stylesheet" href="{{ asset('assets_admin/datatables/datatables.min.css')}}">
+  <link rel="stylesheet" href="{{ asset('assets_admin/datatables/dataTables.bootstrap4.min.css')}}">
+  <link rel="stylesheet" href="{{ asset('assets_admin/datatables/buttons.dataTables.min.css')}}">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/css/select2.min.css" rel="stylesheet" />
   <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/js/select2.min.js"></script>

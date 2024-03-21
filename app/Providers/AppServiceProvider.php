@@ -43,11 +43,15 @@ class AppServiceProvider extends ServiceProvider
         $pengajuan =  Pendaftaran::join('users', 'pendaftaran.id_users', '=', 'users.id')->leftjoin('detail_users', 'detail_users.id_users', '=', 'users.id')->where('status_pendaftaran', 'pengajuan')->get()->count();
         $diterima =  Pendaftaran::join('users', 'pendaftaran.id_users', '=', 'users.id')->leftjoin('detail_users', 'detail_users.id_users', '=', 'users.id')->where('status_pendaftaran', 'diterima')->get()->count();
         $tidak_diterima =  Pendaftaran::join('users', 'pendaftaran.id_users', '=', 'users.id')->leftjoin('detail_users', 'detail_users.id_users', '=', 'users.id')->where('status_pendaftaran', 'tidak diterima')->get()->count();
+        $diterima_bersyarat =  Pendaftaran::join('users', 'pendaftaran.id_users', '=', 'users.id')->leftjoin('detail_users', 'detail_users.id_users', '=', 'users.id')->where('status_pendaftaran', 'diterima bersyarat')->get()->count();
+        $verifikasi = User::where('status', '0')->get()->count();
 
         $data = array(
             'pengajuan'  => $pengajuan,
             'diterima'  => $diterima,
             'tidak_diterima'  => $tidak_diterima,
+            'verifikasi' => $verifikasi,
+            'diterima_bersyarat' => $diterima_bersyarat,
         );
 
     

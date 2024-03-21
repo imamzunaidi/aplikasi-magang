@@ -42,18 +42,17 @@
               <div class="card-body">
                 <form class="user" method = "POST" enctype='multipart/form-data' action = "{{url('insert-register')}}">
                     @csrf
-          
+
                     <div class="form-group ">
                       <label for="frist_name">Nama Lengkap</label>
                       <input id="frist_name" type="text" class="form-control" name="nama_lengkap" autofocus required>
                   </div>
-                 
-                    <div class="form-group">
+
+                    {{-- <div class="form-group">
                         <label>Alamat</label>
                         <input type="text" name="alamat" required class="form-control">
-                    </div>
-                   
-                
+                    </div> --}}
+
                     <div class="row">
                         <div class="form-group col-6">
                             <label for="email">Email</label>
@@ -83,7 +82,7 @@
                           <input type="text" name = "nik" class="form-control" required>
                       </div>
                     </div>
-                 
+
                     <div class="row">
                         <div class="form-group col-6">
                             <label>Tempat Lahir</label>
@@ -103,7 +102,7 @@
                         </select>
                     </div>
 
-      
+
                     <div class="form-group">
                         <label>Agama</label>
                         <select name="agama" class="form-control" required id="">
@@ -114,7 +113,7 @@
                             <option value="Khonghucu">Khonghucu</option>
                         </select>
                     </div>
-                
+
                     <div class="form-group">
                       <label>Alamat Lengkap</label>
                         <textarea name="alamat_lengkap" id="" required class="form-control" cols="30" rows="10"></textarea>
@@ -156,14 +155,14 @@
   <script src="{{asset('')}}assets_admin/modules/nicescroll/jquery.nicescroll.min.js"></script>
   <script src="{{asset('')}}assets_admin/modules/moment.min.js"></script>
   <script src="{{asset('')}}assets_admin/js/stisla.js"></script>
-  
+
   <!-- JS Libraies -->
   <script src="{{asset('')}}assets_admin/modules/jquery-pwstrength/jquery.pwstrength.min.js"></script>
   <script src="{{asset('')}}assets_admin/modules/jquery-selectric/jquery.selectric.min.js"></script>
 
   <!-- Page Specific JS File -->
   <script src="{{asset('')}}assets_admin/js/page/auth-register.js"></script>
-  
+
   <!-- assets_admin JS File -->
   <script src="{{asset('')}}assets_admin/js/scripts.js"></script>
   <script src="{{asset('')}}assets_admin/js/custom.js"></script>

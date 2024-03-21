@@ -38,8 +38,8 @@
                         <tr>
                             <th>No</th>
                             <th>Judul</th>
-                            <th>Deskripsi</th>
                             <th>Tanggal Informasi</th>
+                            <th>Deskripsi</th>
                             <th>Gambar</th>
                             <th class ="text-center" width = "15%">Action</th>
                         </tr>
@@ -53,14 +53,14 @@
                             <td><?= $value->tgl_informasi?></td>
                             <td> <?=(str_word_count("$value->deskripsi") > 10 ? substr("$value->deskripsi",0,140)." ...." : "$value->deskripsi")?></td>
                             <td width = "10%" class ="text-center"><img src="<?= asset('')?>assets_admin/img/informasi/<?= $value->gambar_informasi?>" alt="" width ="90%"></td>
-                        
-                            <td class ="text-center"> 
+
+                            <td class ="text-center">
                             <button type="button" class="btn btn-primary btn-sm " data-toggle="modal" data-target="#updatedata<?= $value->id_informasi ?>">
                                 <i class="fas fa-edit"></i>
                             </button>
                             <a href="<?= url('delete-informasi/' . $value->id_informasi) ?>" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></a>
                             </td>
-                        
+
                           </tr>
                         <?php } ?>
                       </tbody>
